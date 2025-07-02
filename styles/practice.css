@@ -1,0 +1,183 @@
+:root {
+  --pink: #ffd1e3;
+  --red: #e63946;
+  --white: #fff;
+  --gold: #ffd700;
+  --rose-bg: linear-gradient(135deg, #ffd1e3 0%, #fff5f8 100%);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--rose-bg);
+  font-family: Arial, sans-serif;
+  color: #a2122f;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+
+main {
+  z-index: 2;
+  position: relative;
+  max-width: 700px;
+  margin: 3rem auto;
+  background: rgba(255,255,255,0.85);
+  border-radius: 2rem;
+  box-shadow: 0 8px 40px 0 rgba(230,57,70,0.12);
+  padding: 2.5rem 1.5rem 2rem;
+  border: 2px solid var(--gold);
+}
+
+h1 {
+  font-size: 2.7rem;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  color: var(--red);
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #ffd1e3aa;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin: 0 0 2rem;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 1px 12px #ffd1e3;
+}
+
+.heart {
+  font-size: 1.5em;
+  vertical-align: middle;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1);}
+  25% { transform: scale(1.15);}
+  50% { transform: scale(0.95);}
+  75% { transform: scale(1.12);}
+}
+
+.romantic-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.romantic-quotes blockquote {
+  background: rgba(255,209,227,0.28);
+  border-left: 5px solid var(--gold);
+  font-family: Arial, sans-serif;
+  font-size: 1.35rem;
+  color: var(--red);
+  padding: 0.7rem 1.2rem;
+  border-radius: 1.2rem;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.photo-custom {
+  width: 145px;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  border-radius: 1.6rem;
+  box-shadow: 0 6px 24px 0 #f9b5cb55;
+  transition: transform 0.2s;
+  background: #fff;
+}
+
+.photo-custom:hover {
+  transform: scale(1.04) rotate(-2deg);
+  box-shadow: 0 12px 40px 0 #e6394680;
+}
+
+/* Floating Hearts Animation */
+.floating-hearts {
+  pointer-events: none;
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Decorative Flowers */
+.flowers-decor {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: none;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  main {
+    max-width: 95vw;
+    padding: 1.5rem 0.5rem 1rem;
+  }
+  .photos {
+    gap: 0.7rem;
+  }
+  .photo-custom {
+    width: 40vw;
+    min-width: 100px;
+    max-width: 145px;
+    height: 26vw;
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2.1rem;}
+  h2 { font-size: 1.1rem;}
+  .romantic-quotes blockquote {font-size: 1rem;}
+  .photo-custom {
+    width: 40vw;
+    min-width: 70px;
+    height: 90px;
+    border-radius: 1rem;
+  }
+}
+
+/* Music Button */
+#music-toggle {
+  position: fixed;
+  bottom: 1.7rem;
+  right: 1.7rem;
+  z-index: 10;
+  background: var(--white);
+  color: var(--red);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 1.7rem;
+  box-shadow: 0 2px 8px #ffd1e380;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.18s, color 0.18s;
+}
+#music-toggle.active {
+  background: var(--gold);
+  color: var(--red);
+}
+#music-toggle:focus {
+  box-shadow: 0 0 0 3px #ffd1e380;
+}
